@@ -18,6 +18,7 @@ export module dc {
 			} else
 				target[key] = source[key];
 		});
+		return target;
 	}
 
 	function notCore(key: string) {

@@ -28,6 +28,7 @@ var dc;
             else
                 target[key] = source[key];
         });
+        return target;
     }
     dc.clone = clone;
     function notCore(key) {
