@@ -1,27 +1,27 @@
-export module dc {
-	export class Clonable {
-		clone(target?: any): any {
-			return dc.clone(this, target);
-		}
+export class DeepClonable {
+	clone(target?: any): any {
+		return clone(this, target);
 	}
+}
 
-	export function clone(source: any, target?: any) {
-		if (!target)
-			target = {};
+export function clone(source: any, target?: any) {
+	if (!target)
+		target = {};
 
-		var _props = props(source).filter(x => notCore(x));
-		_props.forEach(key => {
-			if (typeof source[key] === 'function') {
-				target[key] = (...args: any[]) => {
-					(source[key] as any).apply(target, args);
-				};
-			} else
-				target[key] = source[key];
-		});
-		return target;
-	}
+	var _props = dcUtility.props(source).filter(x => dcUtility.notCore(x));
+	_props.forEach(key => {
+		if (typeof source[key] === 'function') {
+			target[key] = (...args: any[]) => {
+				(source[key] as any).apply(target, args);
+			};
+		} else
+			target[key] = source[key];
+	});
+	return target;
+}
 
-	function notCore(key: string) {
+module dcUtility {
+	export function notCore(key: string) {
 		return ["constructor",
 			"clone",
 			"__defineGetter__",
@@ -37,7 +37,7 @@ export module dc {
 			"isPrototypeOf"].indexOf(key) == -1;
 	}
 
-	function props(obj: any): string[] {
+	export function props(obj: any): string[] {
 		var p = [];
 		for (; obj != null; obj = Object.getPrototypeOf(obj)) {
 			var op = Object.getOwnPropertyNames(obj);
