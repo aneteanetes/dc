@@ -1,0 +1,23 @@
+{
+  "name": "deep-clone-ts",
+  "version": "0.0.7js",
+  "description": "deep cloning of js objects",
+  "main": "dc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anetegithub/dc.git"
+  },
+  "keywords": [
+    "deepclone",
+    "typescript"
+  ],
+  "author": "anete.anetes <anete.anetes@gmail.com>",
+  "license": "(GPL-2.0)",
+  "bugs": {
+    "url": "https://github.com/anetegithub/dc/issues"
+  },
+  "homepage": "https://github.com/anetegithub/dc#readme"
+}
