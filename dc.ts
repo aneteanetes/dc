@@ -9,7 +9,7 @@ export module dc {
 		if (!target)
 			target = {};
 
-		var _props = this.props(source).filter(x => notCore(x));
+		var _props = props(source).filter(x => notCore(x));
 		_props.forEach(key => {
 			if (typeof source[key] === 'function') {
 				target[key] = (...args: any[]) => {

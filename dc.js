@@ -14,7 +14,7 @@ var dc;
     function clone(source, target) {
         if (!target)
             target = {};
-        var _props = this.props(source).filter(function (x) { return notCore(x); });
+        var _props = props(source).filter(function (x) { return notCore(x); });
         _props.forEach(function (key) {
             if (typeof source[key] === 'function') {
                 target[key] = function () {

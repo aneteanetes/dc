@@ -1,6 +1,6 @@
 {
   "name": "deep-clone-ts",
-  "version": "0.0.7js",
+  "version": "0.0.9",
   "description": "deep cloning of js objects",
   "main": "dc.js",
   "scripts": {
